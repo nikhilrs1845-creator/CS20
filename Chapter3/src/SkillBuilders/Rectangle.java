@@ -19,6 +19,8 @@ public class Rectangle
 		//Display Width and Length On The Console
 		System.out.print("Area is: "+length*width);
 		System.out.print("\nDiagonal Length is: "+Math.sqrt(length*length+width*width));
+		
+		userinput.close();
 	}
 
 }
