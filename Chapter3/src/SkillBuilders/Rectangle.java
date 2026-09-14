@@ -48,7 +48,7 @@ public class Rectangle
         // Request width
         System.out.print("Please enter a width\n");
         float width = GetNumber(userinput);
-
+        
         // Display output
         System.out.print("Area is: " + length * width +
                 "\nDiagonal Length is: " + Math.sqrt(length * length + width * width) +
