@@ -49,7 +49,7 @@ public class Rectangle
         System.out.print("Please enter a width\n");
         float width = GetNumber(userinput);
 
-        // Display Width and Length On The Console
+        // Display output
         System.out.print("Area is: " + length * width +
                 "\nDiagonal Length is: " + Math.sqrt(length * length + width * width) +
                 "\nPerimeter is: " + (2 * length + 2 * width));
