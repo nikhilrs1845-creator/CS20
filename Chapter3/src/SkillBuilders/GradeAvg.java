@@ -49,7 +49,9 @@ public class GradeAvg
         for (int i = 0; i < numGrades; i++) {
         	
         	System.out.print("Please enter grade number " + (i+1) + ":\n");
+        	
         	float grade = GetNumber(userinput);
+        	
         	total = total + grade;
         	
         }
