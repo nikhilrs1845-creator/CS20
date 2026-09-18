@@ -41,6 +41,7 @@ public class CompoundIntrest
         // Create A Scanner Object
         Scanner userinput = new Scanner(System.in);
 
+        // Gets all necessary input
         System.out.print("Enter the principal ($): ");
         float principal = GetNumber(userinput);
         
@@ -53,6 +54,7 @@ public class CompoundIntrest
         System.out.print("Enter the compounding frequency (days): ");
         float freq = 365 / GetNumber(userinput);
 
+        // Calculates total
         float total = (float) (principal * Math.pow(1 + rate / freq, freq * months));
         
         // Display output
