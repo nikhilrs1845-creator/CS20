@@ -41,14 +41,17 @@ public class GradeAvg
         // Create A Scanner Object
         Scanner userinput = new Scanner(System.in);
 
+        // Request input for number of grades to be processed
         System.out.print("How many grades would you like to input?\n");
         int numGrades = (int) GetNumber(userinput);
         
+        // Set up variable for later use
         float total = 0;
         
+        // Asks for values to calculate average
         for (int i = 0; i < numGrades; i++) {
         	
-        	System.out.print("Please enter grade number " + (i+1) + ":\n");
+        	System.out.print("Please enter grade number " + (i+1) + "(%): \n");
         	
         	float grade = GetNumber(userinput);
         	
@@ -57,7 +60,7 @@ public class GradeAvg
         }
 
         
-        // Display output
+        // Displays and calculates output
         System.out.print("Grade average is " + (total/numGrades) + "%");
     }
 }

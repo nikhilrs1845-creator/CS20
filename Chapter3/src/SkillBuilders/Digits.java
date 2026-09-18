@@ -50,10 +50,10 @@ public class Digits {
         // Loop for length of the number
         for (int i = 0; i < length; i++) {
 
-        	//Get relevant digit
+        	// Get relevant digit
             int digit = Character.getNumericValue(numString.charAt(i));
 
-            //Print output in format "3 x 100 = 300"
+            // Print output in format "3 x 100 = 300"
             System.out.println(digit + " x "
                     + Math.pow(10, length - i - 1)
                     + " = "
