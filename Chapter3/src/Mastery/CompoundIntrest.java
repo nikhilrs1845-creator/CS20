@@ -1,4 +1,4 @@
-package SkillBuilders;
+package Mastery;
 
 import java.util.Scanner;
 
