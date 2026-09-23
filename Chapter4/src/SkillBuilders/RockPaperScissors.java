@@ -45,14 +45,14 @@ public class RockPaperScissors {
 	        String[] choices = {"Rock", "Paper", "Scissors"};
 
 	        // Get player and computer choices
-	        System.out.print("Enter 1 for Rock, 2 for Paper, or 3 for Scissors\n");
+	        System.out.print("Enter 1 for Rock, 2 for Paper, or 3 for Scissors:\n");
 	        int player = (int) GetNumber(userinput) - 1;
 	        int com = (int) (Math.random() * 3);
 
 	        System.out.println("Player picked " + choices[player]);
 	        System.out.println("Computer picked " + choices[com]);
 
-	        //Calculate result by subtracting computer choice from player choice, adding 3 to get rid of negative results, and then finding the modulus
+	        //Calculate result by subtracting computer choice from player choice, adding 3 to get rid of negative results, and then finding the remainder when divided by 3
 	        int result = (player - com + 3) % 3;
 
 	        //Find results (0-2) on list and display output
