@@ -36,7 +36,7 @@ public class RockPaperScissors {
 	    }
 
 		// Run main code
-	    public static void main(String[] args)
+		public static void main(String[] args)
 	    {
 	        // Create A Scanner Object
 	        Scanner userinput = new Scanner(System.in);
