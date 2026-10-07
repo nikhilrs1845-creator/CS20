@@ -153,9 +153,6 @@ public class VolumeCalc {
             continueProgram = (int) getNumber(userInput, 0, 1);
         }
 
-        // Close the Scanner when the program is finished.
-        userInput.close();
-
         System.out.println("Program ended.");
     }
 }
