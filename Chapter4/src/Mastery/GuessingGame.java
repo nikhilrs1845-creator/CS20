@@ -2,77 +2,116 @@ package Mastery;
 
 import java.util.Scanner;
 
+/*
+ * Name: Nikhil Stephenson
+ * Course: CSE2140 - 2nd Language Programming
+ * Assignment: Guessing Game
+ *
+ * Description:
+ * This program allows the user to play a guessing game against
+ * the computer. The user selects a number from 1 to 20, and the
+ * computer randomly selects a number from the same range.
+ * The user wins if both numbers match.
+ */
+
 public class GuessingGame {
 
-    // Get a number within a specified range
-    public static float GetNumber(Scanner userinput, int min, int max)
-    {
-        while (true)
-        {
-            try
-            {
-                // Get input
-                float number = userinput.nextFloat();
+    /*
+     * Gets a number from the user and checks that it is
+     * within the specified minimum and maximum values.
+     */
+    public static float getNumber(Scanner userInput, int minimum, int maximum) {
 
-                // Check if number is within range
-                if (number >= min && number <= max)
+        while (true) {
+
+            try {
+
+                // Get a number from the user.
+                float number = userInput.nextFloat();
+
+                // Check if the number is within the accepted range.
+                if (number >= minimum && number <= maximum) {
                     return number;
+                }
 
-                // Display error message
-                System.out.println("Error: Please enter a number between "
-                        + min + " and " + max + ".");
+                // Display an error if the number is outside the range.
+                System.out.println(
+                    "Error: Please enter a number between "
+                    + minimum + " and " + maximum + "."
+                );
+
             }
 
-            // If a non-numerical value is entered
-            catch (Exception e)
-            {
-                System.out.println("Error: Please enter a numerical value.");
+            // Handle input that is not a numerical value.
+            catch (Exception e) {
 
-                if (userinput.hasNext())
-                {
-                    userinput.next();
+                System.out.println(
+                    "Error: Please enter a numerical value."
+                );
+
+                // Remove the invalid input before asking again.
+                if (userInput.hasNext()) {
+                    userInput.next();
                 }
             }
         }
     }
 
-    // Run main code
-    public static void main(String[] args)
-    {
-        // Create a Scanner Object
-        Scanner userinput = new Scanner(System.in);
+    /*
+     * Main method controls the game and allows the user
+     * to play multiple rounds.
+     */
+    public static void main(String[] args) {
 
-        int go = 1;
+        // Create a Scanner object for user input.
+        Scanner userInput = new Scanner(System.in);
 
-        while (go == 1)
-        {
-            int result = 0;
+        // Stores whether the user wants to play another round.
+        int playAgain = 1;
 
-            // Get player and computer choices
-            System.out.print("Enter a number between 1 and 20:\n");
-            int player = (int)GetNumber(userinput, 1, 20);
+        // Continue the game while the user chooses to play again.
+        while (playAgain == 1) {
 
-            // Generate random number between 1 and 20
-            int com = (int)(Math.random() * 20) + 1;
+            // Store the player's and computer's guesses.
+            int playerGuess;
+            int computerGuess;
 
-            // Calculate result
-            if (player == com)
-            {
-                result = 1;
+            // Stores the result: 0 = lose, 1 = win.
+            int gameResult = 0;
+
+            // Ask the player for a number between 1 and 20.
+            System.out.println("Enter a number between 1 and 20:");
+
+            playerGuess = (int) getNumber(userInput, 1, 20);
+
+            // Generate a random number between 1 and 20.
+            computerGuess = (int) (Math.random() * 20) + 1;
+
+            // Compare the player's guess with the computer's guess.
+            if (playerGuess == computerGuess) {
+                gameResult = 1;
             }
 
-            System.out.println("\nPlayer picked " + player);
-            System.out.println("Computer picked " + com + "\n");
+            // Display the numbers selected by the player and computer.
+            System.out.println("\nPlayer picked " + playerGuess);
+            System.out.println("Computer picked " + computerGuess + "\n");
 
-            // Find result and display output
+            // Store the possible results using the gameResult index.
             String[] results = {"You lose!", "You win!"};
-            System.out.println(results[result] + "\n");
 
-            // Ask to play again
+            // Display the result of the round.
+            System.out.println(results[gameResult] + "\n");
+
+            // Ask the player whether they want to play again.
             System.out.println("Would you like to play again?");
-            System.out.println("Enter 1 for yes and 0 for no");
+            System.out.println("Enter 1 for yes and 0 for no:");
 
-            go = (int)GetNumber(userinput, 0, 1);
+            playAgain = (int) getNumber(userInput, 0, 1);
         }
+
+        // Close the Scanner when the program is finished.
+        userInput.close();
+
+        System.out.println("Thanks for playing!");
     }
 }
