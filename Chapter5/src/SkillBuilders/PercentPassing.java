@@ -11,17 +11,22 @@ public class PercentPassing {
         int totalGrades = 0;
         int passingGrades = 0;
 
+        final String FLAG = "!";
+
         System.out.println("Enter grades one at a time.");
-        System.out.println("Enter -1 when you are finished.");
+        System.out.println("Enter ! when you are finished.");
 
         while (true) {
 
             System.out.print("Enter a grade: ");
-            int grade = userinput.nextInt();
 
-            if (grade == -1) {
+            String input = userinput.nextLine();
+
+            if (input.equals(FLAG)) {
                 break;
             }
+
+            int grade = Integer.parseInt(input);
 
             totalGrades++;
 
@@ -31,10 +36,13 @@ public class PercentPassing {
         }
 
         if (totalGrades > 0) {
+
             double percentPassing = (double) passingGrades / totalGrades * 100;
 
             System.out.println("Percent passing: " + percentPassing + "%");
+
         } else {
+
             System.out.println("No grades were entered.");
         }
     }
