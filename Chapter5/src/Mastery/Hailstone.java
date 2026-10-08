@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 /*
  * Name: Nikhil Stephenson
- * Course: CSE2140 - 2nd Language Programming
  * Assignment: Hailstone Sequence
  *
  * Description:

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /*
  * Name: Nikhil Stephenson
- * Course: CSE2140 - 2nd Language Programming
+ * Course: CSE 2110 - Procedural Programming 1	
  * Assignment: Greatest Common Divisor
  *
  * Description:
