@@ -40,14 +40,10 @@ public class GuessingGame {
                     + minimum + " and " + maximum + "."
                 );
 
-            }
+            } catch (Exception e) {
 
-            // Handle input that is not a numerical value.
-            catch (Exception e) {
-
-                System.out.println(
-                    "Error: Please enter a numerical value."
-                );
+                // Handle input that is not a numerical value.
+                System.out.println("Error: Please enter a numerical value.");
 
                 // Remove the invalid input before asking again.
                 if (userInput.hasNext()) {
@@ -81,7 +77,6 @@ public class GuessingGame {
 
             // Ask the player for a number between 1 and 20.
             System.out.println("Enter a number between 1 and 20:");
-
             playerGuess = (int) getNumber(userInput, 1, 20);
 
             // Generate a random number between 1 and 20.
@@ -115,3 +110,39 @@ public class GuessingGame {
         System.out.println("Thanks for playing!");
     }
 }
+
+/*
+ * SCREEN DUMP:
+ *
+ * Test Case 1:
+ *
+ * Enter a number between 1 and 20:
+ * 7
+ *
+ * Player picked 7
+ * Computer picked 12
+ *
+ * You lose!
+ *
+ * Would you like to play again?
+ * Enter 1 for yes and 0 for no:
+ * 0
+ * Thanks for playing!
+ *
+ *
+ * Test Case 2:
+ *
+ * Enter a number between 1 and 20:
+ * 15
+ *
+ * Player picked 15
+ * Computer picked 15
+ *
+ * You win!
+ *
+ * Would you like to play again?
+ * Enter 1 for yes and 0 for no:
+ * 0
+ * Thanks for playing!
+ *
+ */

@@ -93,3 +93,25 @@ public class GCD {
         userInput.close();
     }
 }
+
+/*
+ * SCREEN DUMP:
+ *
+ * Test Case 1:
+ *
+ * Enter the first number: 48
+ * Enter the second number: 18
+ * GCD: 6
+ *
+ */
+
+/*
+ * SCREEN DUMP:
+ *
+ * Test Case 2:
+ *
+ * Enter the first number: 100
+ * Enter the second number: 25
+ * GCD: 25
+ *
+ */

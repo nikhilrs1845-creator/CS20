@@ -39,14 +39,10 @@ public class VolumeCalc {
                     + minimum + " and " + maximum + "."
                 );
 
-            }
+            } catch (Exception e) {
 
-            // Handle input that is not a numerical value.
-            catch (Exception e) {
-
-                System.out.println(
-                    "Error: Please enter a numerical value."
-                );
+                // Handle input that is not a numerical value.
+                System.out.println("Error: Please enter a numerical value.");
 
                 // Remove the invalid input before asking again.
                 if (userInput.hasNext()) {
@@ -153,6 +149,51 @@ public class VolumeCalc {
             continueProgram = (int) getNumber(userInput, 0, 1);
         }
 
+        // Close the Scanner when the program ends.
+        userInput.close();
+
         System.out.println("Program ended.");
     }
 }
+
+/*
+ * SCREEN DUMP:
+ *
+ * Test Case 1:
+ *
+ * Enter 1 for Rectangular Prism
+ * Enter 2 for Sphere
+ * Enter 3 for Cube
+ * Enter 4 for Triangular Prism
+ * 1
+ *
+ * Length: 5
+ * Width: 4
+ * Height: 3
+ *
+ * Volume: 60.0
+ *
+ * Would you like to continue?
+ * Enter 1 for yes and 0 for no:
+ * 0
+ * Program ended.
+ *
+ *
+ * Test Case 2:
+ *
+ * Enter 1 for Rectangular Prism
+ * Enter 2 for Sphere
+ * Enter 3 for Cube
+ * Enter 4 for Triangular Prism
+ * 3
+ *
+ * Side Length: 5
+ *
+ * Volume: 125.0
+ *
+ * Would you like to continue?
+ * Enter 1 for yes and 0 for no:
+ * 0
+ * Program ended.
+ *
+ */

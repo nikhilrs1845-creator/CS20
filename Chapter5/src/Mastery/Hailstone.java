@@ -160,3 +160,42 @@ public class Hailstone {
         userInput.close();
     }
 }
+
+/* SCREEN DUMP:
+ * 
+ * Test Case 1:
+ * 
+ * Enter the starting integer: 1
+ * How many integers would you like to test? 3
+ * 1 -> 4
+ * 1 took 1 iterations.
+ * 
+ * 2 -> 1 -> 4
+ * 2 took 2 iterations.
+ * 
+ * 3 -> 10 -> 5 -> 16 -> 8 -> 4
+ * 3 took 5 iterations.
+ * 
+ * Longest path:
+ * 3 took 5 iterations.
+ * 
+ * *
+ * Test Case 2:
+ *
+ * Enter the starting integer: 5
+ * How many integers would you like to test? 4
+ * 5 -> 16 -> 8 -> 4
+ * 5 took 3 iterations.
+ *
+ * 6 -> 3 -> 10 -> 5 -> 16 -> 8 -> 4
+ * 6 took 6 iterations.
+ *
+ * 7 -> 22 -> 11 -> 34 -> 17 -> 52 -> 26 -> 13 -> 40 -> 20 -> 10 -> 5 -> 16 -> 8 -> 4
+ * 7 took 14 iterations.
+ *
+ * 8 -> 4
+ * 8 took 1 iterations.
+ *
+ * Longest path:
+ * 7 took 14 iterations.
+ */
