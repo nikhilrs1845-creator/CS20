@@ -79,11 +79,10 @@ public class GCD {
          * the greatest common divisor.
          */
         while (secondNumber > 0) {
-
             int remainder = firstNumber % secondNumber;
-
-            firstNumber = secondNumber;
             secondNumber = remainder;
+            firstNumber = secondNumber;
+        }
         }
 
         // Display the greatest common divisor.
