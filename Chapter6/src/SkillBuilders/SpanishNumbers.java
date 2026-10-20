@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class SpanishNumbers {
 
+    /*
+     * Displays the Spanish word for a number from 1 to 10.
+     */
     public static void displaySpanish(int number) {
 
         if (number == 1) {
@@ -27,19 +30,15 @@ public class SpanishNumbers {
         } else if (number == 10) {
             System.out.println("Diez");
         } else {
+            // Display an error if the number is outside the valid range.
             System.out.println("Invalid number");
         }
     }
 
+    /*
+     * Main method gets a number from the user
+     * and displays its Spanish translation.
+     */
     public static void main(String[] args) {
 
-        Scanner userinput = new Scanner(System.in);
-
-        System.out.print("Enter a number from 1 to 10: ");
-        int number = userinput.nextInt();
-
-        displaySpanish(number);
-
-        userinput.close();
-    }
-}
+        // Create
