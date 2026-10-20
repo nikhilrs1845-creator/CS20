@@ -4,82 +4,94 @@ import java.util.Scanner;
 
 public class TimeConverter {
 
-    public static void hoursToMinutes(Scanner input) {
+    /*
+     * Converts a number of hours into minutes.
+     */
+    public static void hoursToMinutes(Scanner userInput) {
 
-        System.out.println("Enter a time in hours to be converted to minutes");
+        System.out.println("Enter a time in hours to be converted to minutes:");
 
-        int hours = input.nextInt();
-
+        int hours = userInput.nextInt();
         int minutes = hours * 60;
 
         System.out.println(hours + " hours is " + minutes + " minutes");
     }
 
-    public static void daysToHours(Scanner input) {
+    /*
+     * Converts a number of days into hours.
+     */
+    public static void daysToHours(Scanner userInput) {
 
-        System.out.println("Enter a time in days to be converted to hours");
+        System.out.println("Enter a time in days to be converted to hours:");
 
-        int days = input.nextInt();
-
+        int days = userInput.nextInt();
         int hours = days * 24;
 
         System.out.println(days + " days is " + hours + " hours");
     }
 
-    public static void minutesToHours(Scanner input) {
+    /*
+     * Converts a number of minutes into hours.
+     */
+    public static void minutesToHours(Scanner userInput) {
 
-        System.out.println("Enter a time in minutes to be converted to hours");
+        System.out.println("Enter a time in minutes to be converted to hours:");
 
-        int minutes = input.nextInt();
-
+        int minutes = userInput.nextInt();
         float hours = minutes / 60.0f;
 
         System.out.println(minutes + " minutes is " + hours + " hours");
     }
 
-    public static void hoursToDays(Scanner input) {
+    /*
+     * Converts a number of hours into days.
+     */
+    public static void hoursToDays(Scanner userInput) {
 
-        System.out.println("Enter a time in hours to be converted to days");
+        System.out.println("Enter a time in hours to be converted to days:");
 
-        int hours = input.nextInt();
-
+        int hours = userInput.nextInt();
         float days = hours / 24.0f;
 
         System.out.println(hours + " hours is " + days + " days");
     }
 
+    /*
+     * Main method displays the conversion menu and
+     * calls the method selected by the user.
+     */
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
+        // Create a Scanner object for user input.
+        Scanner userInput = new Scanner(System.in);
 
+        // Display the available conversions.
         System.out.println("Enter 1 for hours to minutes");
         System.out.println("Enter 2 for days to hours");
         System.out.println("Enter 3 for minutes to hours");
         System.out.println("Enter 4 for hours to days");
 
-        int choice = input.nextInt();
+        // Get the user's conversion choice.
+        int conversionChoice = userInput.nextInt();
 
-        if (choice == 1) {
+        // Call the method that matches the selected conversion.
+        if (conversionChoice == 1) {
+            hoursToMinutes(userInput);
 
-            hoursToMinutes(input);
+        } else if (conversionChoice == 2) {
+            daysToHours(userInput);
 
-        } else if (choice == 2) {
+        } else if (conversionChoice == 3) {
+            minutesToHours(userInput);
 
-            daysToHours(input);
-
-        } else if (choice == 3) {
-
-            minutesToHours(input);
-
-        } else if (choice == 4) {
-
-            hoursToDays(input);
+        } else if (conversionChoice == 4) {
+            hoursToDays(userInput);
 
         } else {
-
             System.out.println("Invalid choice.");
         }
 
-        input.close();
+        // Close the Scanner when the program ends.
+        userInput.close();
     }
 }
