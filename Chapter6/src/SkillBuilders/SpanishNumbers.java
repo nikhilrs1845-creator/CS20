@@ -30,7 +30,6 @@ public class SpanishNumbers {
         } else if (number == 10) {
             System.out.println("Diez");
         } else {
-            // Display an error if the number is outside the valid range.
             System.out.println("Invalid number");
         }
     }
@@ -41,4 +40,17 @@ public class SpanishNumbers {
      */
     public static void main(String[] args) {
 
-        // Create
+        // Create a Scanner
+        Scanner userinput = new Scanner(System.in);
+
+        // Get a number from the user
+        System.out.print("Enter a number from 1 to 10: ");
+        int number = userinput.nextInt();
+
+        // Display the Spanish translation
+        displaySpanish(number);
+
+        // Close the Scanner
+        userinput.close();
+    }
+}
